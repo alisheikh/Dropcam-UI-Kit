@@ -12,36 +12,34 @@
   font-weight: 500;
 }
 
-.btn {
-  border: none;
-  background: @lightgray;
-  color: @button-text;
-  padding: 9px 12px 10px;
-  line-height: 22px;
-  text-decoration: none;
+.btn-round {
+  font-size: 18px;
+  line-height: 24px;
+  padding: 10px 18px;
+  background-color: @dark-blue;
+  background-image: none;
+  border-radius: 40px;
+  box-shadow: 0 2px 0 0 @shadow-blue;
+  color: white;
+  font-weight: bold;
   text-shadow: none;
-  .border-radius(6px);
-  .box-shadow(none);
-  .transition(0.25s);
+  text-decoration: none;
+  border-width: 0;
 
+  
   // Alternate states
   // --------------------------------------------------
-  &:hover,
-  &:focus,
-  .btn-group:focus &.dropdown-toggle {
-    background-color: @button-hover;
-    color: @button-text;
-    outline: none;
-    .transition(0.25s);
+  &:hover {
+    color: white;
+    background-color: @light-blue;
+    background-image: none;
   }
 
   // Active State
   &:active,
   .btn-group.open &.dropdown-toggle,
   &.active {
-    background-color: @button-active;
-    color: fade(@button-text, 75%);
-    .box-shadow(none);
+    
   }
 
   // Disabled state
@@ -49,7 +47,7 @@
   &[disabled] {
     background-color: @lightgray;
     color: fade(@button-text, 75%);
-    .box-shadow(none);
+    box-shadow: none;
     .opacity(70);
   }
 
@@ -58,17 +56,10 @@
 
   // Large
   &.btn-large {
-    font-size: @base-font-size * 1.214; /* 17px */
-    line-height: 20px;
-    padding: 12px 18px 13px;
-
-    > [class^="fui-"] {
-      top: 0;
-
-      &.pull-right {
-        margin-right: -2px;
-      }
-    }
+    font-size: 36px; 
+    line-height: 36px;
+    padding: 12px 32px;
+    box-shadow: 0 5px 0 0 @shadow-blue;
   }
 
   // Set the backgrounds
@@ -159,7 +150,7 @@
       border-left: 2px solid fade(@base, 15%);
       padding-left: 13px;
       padding-right: 13px;
-      .box-shadow(none);
+      box-shadow: none;
 
       .caret {
         margin-left: 3px;
