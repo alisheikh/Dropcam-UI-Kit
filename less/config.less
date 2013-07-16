@@ -5,6 +5,16 @@
 // Global values
 // --------------------------------------------------
 
+// grid values
+// --------------------------------------------------
+@column: 66px;
+@gutter: 16px;
+@grid-columns: 12;
+@wrapper-width: 1279px;
+
+@max-width: (@column * @grid-columns) + (@gutter * (@grid-columns + 1)); // 1000px
+@content-width: (@column * @grid-columns) + (@gutter * (@grid-columns - 1)); // 968px
+
 //
 // Color Swatches
 // --------------------------------------------------
