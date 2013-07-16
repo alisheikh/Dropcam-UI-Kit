@@ -40,9 +40,17 @@
 
 @white:         #f9f9f9;
 
-@dark-blue:     #00b0ed;
-@light-blue:    #5ccdf3;
-@shadow-blue:   #4a77b8;
+//primary btns
+@blue:          #00b0ed; //#0f7395;
+@blue-hover:    #5ccdf3;
+//@blue-active:    #5ccdf3;
+@blue-shadow:   #4a77b8;
+
+//strong btns
+@orange: #E6762E;
+@orange-active: #c95205;
+@orange-hover: #fb8c44;
+@orange-shadow: #a84302;
 
 
 
@@ -96,6 +104,10 @@
 @pager-padding: 9px 15px 10px;
 
 // Buttons
+@btn-depth:             2px;
+@btn-large-depth:       5px;
+
+/* not used */
 @button-text:           @inverse;
 @button-hover:          mix(@lightgray, white, 80%);
 @button-active:         mix(@lightgray, black, 85%);
@@ -111,6 +123,7 @@
 @button-warning-active: mix(@warning, black, 85%);
 @button-inverse-hover:  overlay(@base, darken(white, 37.5%));
 @button-inverse-active: mix(@base, black, 85%);
+
 
 // Navbar
 // -------------------------

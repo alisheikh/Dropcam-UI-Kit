@@ -12,26 +12,30 @@
   font-weight: 500;
 }
 
-.btn-round {
+//mixins
+.btn (@radius: 0px){
   font-size: 18px;
   line-height: 24px;
   padding: 10px 18px;
-  background-color: @dark-blue;
+  background-color: @blue;
   background-image: none;
-  border-radius: 40px;
-  box-shadow: 0 2px 0 0 @shadow-blue;
+  box-shadow: 0 @btn-depth 0 0 @blue-shadow;
   color: white;
   font-weight: bold;
   text-shadow: none;
   text-decoration: none;
   border-width: 0;
+  border-radius: @radius;
+  vertical-align: center;
+  display: inline-block;
+  cursor: pointer;
 
   
   // Alternate states
   // --------------------------------------------------
   &:hover {
     color: white;
-    background-color: @light-blue;
+    background-color: @blue-hover;
     background-image: none;
   }
 
@@ -59,12 +63,16 @@
     font-size: 36px; 
     line-height: 36px;
     padding: 12px 32px;
-    box-shadow: 0 5px 0 0 @shadow-blue;
+    box-shadow: 0 @btn-large-depth 0 0 @blue-shadow;
   }
 
   // Set the backgrounds
   // -------------------------
-  &.btn-primary {
+  &.btn-striking {
+    .swap-button-color(@orange, @orange-hover, @orange-active, 0 @btn-depth 0 0 @orange-shadow);
+  }
+
+  /*&.btn-primary {
     .swap-button-color(@firm, @button-primary-hover, @button-primary-active);
   }
   &.btn-info    {
@@ -81,6 +89,12 @@
   }
   &.btn-inverse {
     .swap-button-color(@base, @button-inverse-hover, @button-inverse-active);    
+  }*/
+
+  // Button type
+  // ---------------------------------------------------
+  &.btn-flat {
+    box-shadow: none;
   }
 
   // Button icon
@@ -96,6 +110,14 @@
       margin-right: 0px;
     }
   }
+}
+
+.btn-round {
+  .btn(40px);
+}
+
+.btn {
+  .btn(0px);
 }
 
 // Other button locations

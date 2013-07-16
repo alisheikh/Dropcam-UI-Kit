@@ -142,8 +142,9 @@
   filter: unquote("progid:DXImageTransform.Microsoft.gradient(enabled = false)");
 }
 
-.swap-button-color(@color, @hover, @active) {
+.swap-button-color(@color, @hover, @active, @shadow) {
   background-color: @color;
+  .box-shadow(@shadow);
 
   &:hover,
   &:focus,
