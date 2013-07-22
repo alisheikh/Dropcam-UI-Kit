@@ -1,68 +1,34 @@
-// Some general UI pack related JS
-// Extend JS String with repeat method
-String.prototype.repeat = function(num) {
-    return new Array(num + 1).join(this);
-};
+(function() {
+  var colors = {'blue-digital': '#00b0ed',
+                'heavy-raindrop': '#004e76',
+                'raindrop': '#0372b0',
+                'backdrop': '#939598',
+                'heavy-dewdrop':  '#5acaed',
+                'dewdrop': '#c3e7ef',
+                'airdrop': '#dcddde',
+                'heavy-gumdrop': '#dc6134',
+                'gumdrop': '#f38546',
+                'lemondrop': '#ffef94'
+              };
 
-(function($) {
+  for(var color in colors) {
+    var $tr = $('<tr></tr>');
+    var tds = [$('<td><div class="color-block"></div></td>'), 
+               $('<td class="color-value"></td>'),
+               $('<td class="color-name"></td>')
+              ];
 
-  // Add segments to a slider
-  $.fn.addSliderSegments = function (amount) {
-    return this.each(function () {
-      var segmentGap = 100 / (amount - 1) + "%"
-        , segment = "<div class='ui-slider-segment' style='margin-left: " + segmentGap + ";'></div>";
-      $(this).prepend(segment.repeat(amount - 2));
-    });
-  };
-
-  $(function() {
-  
-    // Todo list
-    $(".todo li").click(function() {
-        $(this).toggleClass("todo-done");
-    });
-
-    // Custom Select
-    $("select[name='herolist']").selectpicker({style: 'btn-primary', menuStyle: 'dropdown-inverse'});
-
-    // Tooltips
-    $("[data-toggle=tooltip]").tooltip("show");
-
-    // Tags Input
-    $(".tagsinput").tagsInput();
-
-    // jQuery UI Sliders
-    var $slider = $("#slider");
-    if ($slider.length) {
-      $slider.slider({
-        min: 1,
-        max: 5,
-        value: 2,
-        orientation: "horizontal",
-        range: "min"
-      }).addSliderSegments($slider.slider("option").max);
+    for(var i=0;tds[i];i++) {
+      $tr.append(tds[i]);
     }
 
-    // Placeholders for input/textarea
-    $("input, textarea").placeholder();
-
-    // Make pagination demo work
-    $(".pagination a").on('click', function() {
-      $(this).parent().siblings("li").removeClass("active").end().addClass("active");
+    $tr.find('.color-block').css({
+      'background-color': colors[color]
     });
+    $tr.find('.color-value').html(colors[color]);
+    $tr.find('.color-name').html(color);
 
-    $(".btn-group a").on('click', function() {
-      $(this).siblings().removeClass("active").end().addClass("active");
-    });
+    $('table.table-colors tbody').append($tr)
+  }
 
-    // Disable link clicks to prevent page scrolling
-    $('a[href="#fakelink"]').on('click', function (e) {
-      e.preventDefault();
-    });
-
-    // Switch
-    $("[data-toggle='switch']").wrap('<div class="switch" />').parent().bootstrapSwitch();
-    
-  });
-  
-})(jQuery);
+}());
