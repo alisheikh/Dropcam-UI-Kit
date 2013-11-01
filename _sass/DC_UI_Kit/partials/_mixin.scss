@@ -1,0 +1,205 @@
+@import "variables";
+@import "palette";
+
+@mixin border-box {
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+@mixin nav-li {
+  a:hover {
+    color: $dark_gray;
+  }
+
+  a {
+    color: $backdrop;
+  }
+
+  &.ui-state-disabled:hover {
+    a {
+      color: $backdrop;
+    }
+  }
+
+  &.ui-state-disabled {
+    cursor: default;
+  }
+
+  &.current > a, &.ui-tabs-active > a {
+    color: $dark_gray;
+  }
+}
+
+@mixin wrap-container {
+  @include clearfix;
+  max-width: $wrap-width;
+  min-width: $content-width;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+@mixin content-container {
+  @include clearfix;
+  max-width: $content-width;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  padding: {
+    left: $gutter;
+    right: $gutter;
+  }
+}
+
+@mixin banner($image, $height) {
+  height: $height;
+  background-image: url($image);
+  background-repeat: no-repeat;
+  background-position: center;
+  @include background-size(cover);
+}
+
+@mixin hover($active-color: #0f7395) {
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    color: $active-color;
+    opacity: 1;
+  }
+}
+
+@mixin dc-button ($mode: secondary, $size: medium, $background: light) {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  border: none;
+  opacity: 1;
+  filter:alpha(opacity=100);
+  height: 42px;
+  font-size: 16px;
+  text-shadow: none;
+  border-radius: 3px;
+  text-align: center;
+
+  @if $mode == primary {
+    background-color: $blue-digital;
+    color: #FFF;
+  }
+  @else if $mode == negative {
+    background-color: $gumdrop;
+    color: #FFF; 
+  } @else {
+    background-color: #d5d4d1;
+    color: $font-color;
+  }
+
+  @if $size == small {
+    font-size: 85%;
+  }
+  @else {
+    font-size: 16px;
+  }
+
+  behavior: url(/js/PIE.htc);
+
+  &:hover, &.hover {
+    @if $mode == primary {
+      background-color: #00BDFE;
+    }
+    @else if $mode == negative {
+      background-color: #FF9547;
+    }
+    @else {
+      background-color: #E8E9EA;
+    }
+  }
+
+  &:active, &.active {
+    @if $mode == primary {
+      background-color: #0096D1;
+    }
+    @else if $mode == negative {
+      background-color: #E27A3F;
+    }
+    @else {
+      background-color: #CACBCE;
+    }
+  }
+
+  &.disabled, &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.4;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    filter: alpha(opacity=40);
+  }
+}
+
+// The general purpose retina sprite mixin.
+//
+//    @include retina-sprite(name, $spritemap1, $spritemap2)
+//    @include retina-sprite(name, $spritemap1, $spritemap2[, $dimensions: true, $pad: 0])
+//
+//    If `dimensions` is true, then width/height will also be set.
+//
+//    if `pad` is non-zero, then that's how much padding the element will have (requires
+//    $spacing on the sprite maps). Great for iPhone interfaces to make hit areas bigger.
+//
+@mixin retina-sprite($name, $sprites, $sprites-url, $sprites2x, $sprites2x-url, $dimensions: true, $pad: 0) {
+  @if $dimensions == true {
+    @include sprite-dimensions($sprites, $name);
+  }
+
+  background-image: $sprites-url;
+  background-position: sprite-position($sprites, $name, -$pad, -$pad);
+  background-repeat: no-repeat;
+
+  @if $pad > 0 {
+    padding: $pad;
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5) {
+      $pos: sprite-position($sprites2x, $name, -$pad*2, -$pad*2);
+      background-image: $sprites2x-url;
+      background-position: nth($pos, 1) nth($pos, 2)/2;
+      // the path prefix "generated" is hard coded here since there is a bug in
+      // sprite-path where it ignores the generated_images_dir setting
+      @include background-size(ceil(image-width('generated/' + sprite-path($sprites2x)) / 2), auto);
+      // ^-- this is the "smarter" way to do this.
+      //     sprite-path() returns the path of the generated sprite sheet, which
+      //     image-width() calculates the width of. the ceil() is in place in case
+      //     you have sprites that have an odd-number of pixels in width (which
+      //     you shouldn't in the first place)
+  }
+}
+
+// Now let's define the sprite mixin.
+// This delegates to the reusable retina-sprite mixin.
+@mixin sprite($name) {
+  @include retina-sprite($name, $sprites, $sprites-url, $sprites2x, $sprites2x-url);
+}
+
+@mixin tooltip($bg, $arrow-position, $arrow-size) {
+  font-size: $base-font-size !important;
+  background-color: $bg;
+  border-radius: 3px;
+  padding: 1em 2em;
+  margin-top: 1em;
+  position: absolute;
+  color: white;
+  z-index: 1000;
+
+  &:after {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-color: $bg transparent;
+    border-width: 0 $arrow-size $arrow-size;
+    top: -$arrow-size;
+    left: $arrow-position;
+    display: block;
+    width: 0;
+  }
+}

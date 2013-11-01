@@ -1,0 +1,39 @@
+@import "palette";
+@import "mixin";
+
+.btn, .btn-round {
+  text-align: center;
+  display: inline-block;
+  color: white;
+  background-color: $blue-digital;
+  padding: 0.18em 1.2em;
+  font-size: 0.85em;
+  @include hover;
+
+  &.disabled {
+    background-color: $airdrop;
+    color: $font-color; 
+  }
+}
+
+.btn {
+  border-radius: 5px;
+}
+
+.btn-round {
+  border-radius: 14.5px;
+}
+
+.btn-large {
+  padding: 0.5em 2em;
+  font-size: 2.3em;
+
+  &.btn {
+    border-radius: 5px;
+  }
+}
+
+.btn-striking {
+  background-color: $gumdrop;
+}
+

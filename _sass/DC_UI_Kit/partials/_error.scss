@@ -1,0 +1,30 @@
+@import "palette";
+
+.validation_error {
+  position: absolute;
+  background: rgba($heavy-gumdrop, 0.8);
+  font-size: 12px;
+  color: white;
+  text-shadow: rgba(0,0,0,.2) 0 -1px 0;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px rgba(#999, 0.5);
+  white-space: nowrap;
+
+  .validation_container {
+    position: relative;
+    padding: 3px 6px;
+  }
+  .validation_x {
+    margin: 2px auto -2px auto;
+  }
+  .arrow {
+    position: absolute;
+    top: 7px;
+    left: -7px;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-right: 7px solid rgba($heavy-gumdrop, 0.8);
+  }
+}

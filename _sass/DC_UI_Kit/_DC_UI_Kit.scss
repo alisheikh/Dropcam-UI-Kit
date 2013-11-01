@@ -1,0 +1,165 @@
+@import "partials/button";
+@import "partials/font";
+@import "partials/error";
+
+@import "partials/mixin";
+@import "partials/functions";
+
+// grid
+@for $i from 1 through 12 {
+	.col-#{$i} {
+		@include span-columns($i);
+	}
+}
+
+[class*=col-] {
+	&:last-child {
+		@include omega();
+	} 
+}
+
+@for $i from 1 through 11 {
+	.shift-#{$i} {
+		@include shift($i);
+    display: inline-block;
+    float: none;
+	}
+  .shift-#{$i}-reverse {
+    @include shift(-$i);
+    display: inline-block;
+    float: none;
+  }
+}
+
+.input {
+  border:solid 1px $airdrop;
+  padding: 5px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.hide {
+	display: none;
+}
+
+.content {
+  @include wrap-container;
+  @include box-shadow(0px 1px 6px 0px rgba(0, 0, 0, 0.3));
+  background-color: white;
+}
+
+.shell {
+  @include content-container;
+}
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.icon-info {
+  cursor: pointer;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float :right;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+//is it still used?
+.lt-ie9 {
+  .content {
+    filter:
+      progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=2, Direction=90),
+      progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=2, Direction=180),
+      progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=2, Direction=270);
+  }
+
+  .last {
+    margin-right: 0 !important;
+  }
+}
+
+.message-bar {
+  display: none;
+  height: 34px;
+  overflow: hidden;
+
+  * {
+    @include box-sizing(border-box);
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+    }
+  }
+
+  .message {
+    height: 34px;
+    line-height: 34px;
+    color: white;
+    font-size: 11pt;
+
+    .text {
+      float: left;
+      width: 812px;
+      padding-left: 1em;
+    }
+    .cta {
+      float: left;
+      width: 100px;
+      text-align: center;
+      margin-left: 2px;
+    }
+    .close {
+      float: left;
+      width: 34px;
+      text-align: center;
+      margin-left: 2px;
+    }
+
+    &.message-success .text, &.message-success .cta, &.message-success .close {
+      background-color: $heavy-dewdrop; // For IE8
+      background-color: rgba($heavy-dewdrop, 0.8);
+    }
+    &.message-success .cta:hover, &.message-success .close:hover {
+      background-color: $heavy-dewdrop;
+      cursor: pointer;
+    }
+    &.message-error .text, &.message-error .cta, &.message-error .close {
+      background-color: $heavy-gumdrop;
+      background-color: rgba($heavy-gumdrop, 0.8);
+    }
+    &.message-error .cta:hover, &.message-error .close:hover {
+      background-color: $heavy-gumdrop;
+      cursor: pointer;
+    }
+    &.message-warning .text, &.message-warning .cta, &.message-warning .close {
+      background-color: $gumdrop;
+      background-color: rgba($gumdrop, 0.8);
+    }
+    &.message-warning .cta:hover, &.message-warning .close:hover {
+      background-color: $gumdrop;
+      cursor: pointer;
+    }
+    &.message-info .text, &.message-info .cta, &.message-info .close {
+      background-color: $raindrop;
+      background-color: rgba($raindrop, 0.8);
+    }
+    &.message-info .cta:hover, &.message-info .close:hover {
+      background-color: $raindrop;
+      cursor: pointer;
+    }
+  }
+}
