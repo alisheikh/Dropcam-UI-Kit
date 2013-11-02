@@ -1,1 +1,17 @@
 @import "DC_UI_Kit/DC_UI_Kit";
+
+//this website specific css
+body {
+  background-color: $body-bg;
+}
+
+.sidebar {
+	padding: 0;
+	background-color: $user-content-bg;
+}
+
+.jumbotron {
+	background-color: $blue-digital;
+	color: white;
+	margin-bottom: 0;
+}

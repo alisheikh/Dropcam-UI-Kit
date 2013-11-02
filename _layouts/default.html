@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width, initial=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- syntax highlighting CSS -->
         <link rel="stylesheet" href="{{site.baseurl}}/css/syntax.css">
@@ -15,9 +15,9 @@
 
         <!-- UI Kit -->
         <link rel="stylesheet" href="{{site.baseurl}}/css/DC_UI_Kit.css">
-
+        
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
         <script src="{{site.baseurl}}/js/bootstrap.min.js"></script>
-
     </head>
     <body>
       <div class="jumbotron">
@@ -25,5 +25,62 @@
           <h1>Dropcam UI Kit</h1>
         </div>
       </div>
+
+      <div class="col-xs-12 col-sm-2 sidebar">
+        <ul class="nav nav-pills nav-stacked">
+          <li><a href="#typography">Typography</a></li>
+          <li><a href="#palette">palette</a></li>
+          <li><a href="#grid">Grid system</a></li>
+          <li><a href="#button">Button</a></li>
+        </ul>
+      </div>
+
+      <div class="col-xs-12 col-sm-10 main-container">
+        <section id="#typography">
+          <div class="page-header">
+            <h3>Typography</h3>
+          </div>
+          <p>The base font is 14px. The heading font is based on the base font size using em;</p>
+          <div class="row">
+            <table class="table col-sm-10">
+              <tbody>
+                <tr>
+                  <td>Base font</td>
+                  <td>14px</td>
+                </tr>
+                <tr>
+                  <td><h1>h1. Dropcam heading</h1></td>
+                  <td>4em</td>
+                </tr>
+                <tr>
+                  <td><h2>h2. Dropcam heading</h2></td>
+                  <td>3em</td>
+                </tr>
+                <tr>
+                  <td><h3>h3. Dropcam heading</h3></td>
+                  <td>2.5em</td>
+                </tr>
+                <tr>
+                  <td><h4>h4. Dropcam heading</h4></td>
+                  <td>1.5em</td>
+                </tr>
+                <tr>
+                  <td><h5>h5. Dropcam heading</h5></td>
+                  <td>1.28em</td>
+                </tr>
+                <tr>
+                  <td><h6>h6. Dropcam heading</h6></td>
+                  <td>1em</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        <section>
+      </div>
+
+      <script type="text/javascript">
+        $('.sidebar').height($(window).height());
+      </script>
     </body>
 </html>

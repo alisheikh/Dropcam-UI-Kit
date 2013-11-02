@@ -763,3 +763,21 @@ strong, b {
   background-color: #0372b0;
   cursor: pointer;
 }
+
+/* line 4, ../_sass/DC_UI_Kit.scss */
+body {
+  background-color: #fcfcfc;
+}
+
+/* line 8, ../_sass/DC_UI_Kit.scss */
+.sidebar {
+  padding: 0;
+  background-color: #f3f3f3;
+}
+
+/* line 13, ../_sass/DC_UI_Kit.scss */
+.jumbotron {
+  background-color: #00b0ed;
+  color: white;
+  margin-bottom: 0;
+}
