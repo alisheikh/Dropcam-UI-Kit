@@ -1,17 +1,27 @@
 @import "DC_UI_Kit/DC_UI_Kit";
 
 //this website specific css
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+}
+
 body {
   background-color: $body-bg;
+  padding-bottom: 40px;
 }
 
 section {
 	clear: both;
+	margin-bottom: 20px;
 }
 
 .sidebar {
 	padding: 0;
 	background-color: $user-content-bg;
+
+  .nav a {
+  	padding-left: 35px;
+  }
 }
 
 .jumbotron {
@@ -32,3 +42,13 @@ section {
 		margin: 10px auto;
 	}
 }
+
+#grid {
+	.bs-example {
+		[class*=col-] {
+			background-color: $airdrop;
+			padding: 10px;
+		}
+	}
+}
+

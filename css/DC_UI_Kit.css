@@ -603,7 +603,7 @@ strong, b {
 /* line 45, ../_sass/DC_UI_Kit/_DC_UI_Kit.scss */
 .content {
   zoom: 1;
-  max-width: 1279px;
+  max-width: 1280px;
   min-width: 1000px;
   margin-left: auto;
   margin-right: auto;
@@ -765,37 +765,54 @@ strong, b {
 }
 
 /* line 4, ../_sass/DC_UI_Kit.scss */
-body {
-  background-color: #fcfcfc;
-}
-
-/* line 8, ../_sass/DC_UI_Kit.scss */
-section {
+h1, h2, h3, h4, h5, h6 {
   clear: both;
 }
 
-/* line 12, ../_sass/DC_UI_Kit.scss */
+/* line 8, ../_sass/DC_UI_Kit.scss */
+body {
+  background-color: #fcfcfc;
+  padding-bottom: 40px;
+}
+
+/* line 13, ../_sass/DC_UI_Kit.scss */
+section {
+  clear: both;
+  margin-bottom: 20px;
+}
+
+/* line 18, ../_sass/DC_UI_Kit.scss */
 .sidebar {
   padding: 0;
   background-color: #f3f3f3;
 }
+/* line 22, ../_sass/DC_UI_Kit.scss */
+.sidebar .nav a {
+  padding-left: 35px;
+}
 
-/* line 17, ../_sass/DC_UI_Kit.scss */
+/* line 27, ../_sass/DC_UI_Kit.scss */
 .jumbotron {
   background-color: #00b0ed;
   color: white;
   margin-bottom: 0;
 }
 
-/* line 23, ../_sass/DC_UI_Kit.scss */
+/* line 33, ../_sass/DC_UI_Kit.scss */
 .center {
   text-align: center;
 }
 
-/* line 28, ../_sass/DC_UI_Kit.scss */
+/* line 38, ../_sass/DC_UI_Kit.scss */
 #palette .circle {
   height: 50px;
   width: 50px;
   border-radius: 25px;
   margin: 10px auto;
+}
+
+/* line 48, ../_sass/DC_UI_Kit.scss */
+#grid .bs-example [class*=col-] {
+  background-color: #dcddde;
+  padding: 10px;
 }
