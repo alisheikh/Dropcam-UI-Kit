@@ -1,8 +1,35 @@
-- value: "#0372b0"
-  name: raindrop
-
-- value: "#004e76"
-  name: heavy raindrop
-
-- value: "#5acaed"
-  name: heavy dewdrop
+- 
+  - value: "#00b0ed"
+    name: blue digital
+  - value: "#939598"
+    name: backdrop
+  - value: "#dcddde"
+    name: airdrop
+-
+  - value: "#0372b0"
+    name: raindrop
+  - value: "#004e76"
+    name: heavy raindrop
+  - value: "#5acaed"
+    name: heavy dewdrop
+-
+  - value: "#dc6134"
+    name: heavy gumdrop
+  - value: "#f38546"
+    name: gumdrop
+  - value: "#ffef94"
+    name: lemondrop
+-
+  - value: "#f9f9f9"
+    name: white
+  - value: "#ebebeb"
+    name: gray
+  - value: "#65656a"
+    name: dark gray
+-
+  - value: "#4a4a4a"
+    name: black
+  - value: "#fcfcfc"
+    name: body bg
+  - value: "#f3f3f3"
+    name: user content bg
