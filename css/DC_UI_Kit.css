@@ -770,14 +770,31 @@ body {
 }
 
 /* line 8, ../_sass/DC_UI_Kit.scss */
+section {
+  clear: both;
+}
+
+/* line 12, ../_sass/DC_UI_Kit.scss */
 .sidebar {
   padding: 0;
   background-color: #f3f3f3;
 }
 
-/* line 13, ../_sass/DC_UI_Kit.scss */
+/* line 17, ../_sass/DC_UI_Kit.scss */
 .jumbotron {
   background-color: #00b0ed;
   color: white;
   margin-bottom: 0;
+}
+
+/* line 23, ../_sass/DC_UI_Kit.scss */
+.center {
+  text-align: center;
+}
+
+/* line 28, ../_sass/DC_UI_Kit.scss */
+#palette .circle {
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
 }

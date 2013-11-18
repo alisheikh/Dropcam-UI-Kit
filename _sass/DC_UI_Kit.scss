@@ -5,6 +5,10 @@ body {
   background-color: $body-bg;
 }
 
+section {
+	clear: both;
+}
+
 .sidebar {
 	padding: 0;
 	background-color: $user-content-bg;
@@ -14,4 +18,16 @@ body {
 	background-color: $blue-digital;
 	color: white;
 	margin-bottom: 0;
+}
+
+.center {
+	text-align: center;
+}
+
+#palette {
+	.circle {
+		height: 50px;
+		width: 50px;
+		border-radius: 25px;
+	}
 }
